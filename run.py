@@ -4,7 +4,7 @@ from aiogram import Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
-from configs import TOKEN
+from utils.configs import TOKEN
 from handlers.user_handlers import user_router
 
 

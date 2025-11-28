@@ -18,3 +18,22 @@ def generate_submitting_keyboards():
     builder.adjust(2)
 
     return builder.as_markup(resize_keyboard=True)
+
+
+def generate_main_menu_buttons():
+    builder = ReplyKeyboardBuilder()
+
+    builder.button(text="📍 Manzil")
+    builder.button(text="📞 Bog'lanish")
+    builder.button(text="✍️ Fikr bildirish")
+    builder.button(text="ℹ️ Info")
+
+    builder.adjust(2)
+    return builder.as_markup(resize_keyboard=True)
+
+
+def generate_back_button():
+    builder = ReplyKeyboardBuilder()
+    builder.button(text="⬅ Ortga")
+    builder.adjust(1)
+    return builder.as_markup(resize_keyboard=True)
