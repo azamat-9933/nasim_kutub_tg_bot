@@ -23,25 +23,26 @@ Telefon raqam: {phone_number}"""
 
 def generate_contacts_text():
     contact_text = """
-<b>Telefon:</b> +998 71 238 64 89
+<b>📞 Telefon:</b> +998 77 155 15 15
 
-<b>E-mail:</b> info@tuit.uz
+<b>📧 E-mail:</b> nasimkutub1@gmail.com
 
-<b>Ish grafigi:</b> Dushanba - Juma 8:30 - 18:00
-Shanba Yakshanba dam olish kuni"""
+<b>🔔 Telegram kanal:</b> https://t.me/nasimkutub
 
-    return contact_text
-
-def generate_address_text():
-    contact_text = """<b>Manzil:</b> Toshkent 100084, Amir Temur shox ko'chasi 108 uy
-
-<b>Jamoat transportlari:</b>
-10, 17, 19, 24, 38, 51, 60, 67, 72, 93, 115, 140
-
-<b>Ish grafigi:</b> Dushanba - Juma 8:30 - 18:00
-Shanba Yakshanba dam olish kuni"""
+<b>👨‍💻 Admin: https://t.me/nasimulgurji</b>"""
 
     return contact_text
+
+
+def show_transports_text():
+    transports_text = """
+<b>Jamoat transportlari: </b>
+<b>🚇 Metro:</b> <i>Chorsu -> 650m</i>
+<b>🚇 Metro:</b> <i>G'ofur G'ulom -> 860m</i>
+<b>🚌 Avtobus:</b> <i>8T, 11, 17, 23, 27, 28, 29, 32, 35, 43, 44, 46, 47, 53, 56, 64, 65, 68, 73, 76, 84, 89, 91, 100, 103, 109, 115, 118, 120, 123, 136, 146, 147, 152, 177, 188, 196, 472</i>
+<b>🚐 Marshrutka:</b> <i>27m, 52m, 76m, 88m, 92m, 130m, 182m, 191m, 453</i>
+"""
+    return transports_text
 
 
 def generate_feedback_message(feedback_data: dict) -> str:
@@ -68,3 +69,7 @@ def generate_feedback_message(feedback_data: dict) -> str:
 
     return message
 
+def generate_info_text():
+    return f"""<b>Ushbu telegram bot orqali siz Nasim Kutub nashriyotiga tegishli onlayn do'konimizga murojaat qilishingiz mumkin va kitoblarni onlayn harid qilishingiz mumkin. Buning uchun siz 📱 Ilova tugmasini bosing va sizda onlayn do'konimiz ochiladi !</b>
+
+<b>👨🏻‍💻 Telegram bot yaratuvchisi bilan aloqa: https://t.me/azza_back_end_dev</b>"""

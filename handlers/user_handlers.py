@@ -2,6 +2,7 @@ from aiogram import Bot
 from aiogram import Router
 from aiogram.types import Message
 from aiogram.enums import ParseMode
+from aiogram.types import CallbackQuery
 from aiogram.filters import CommandStart
 from aiogram.fsm.context import FSMContext
 from aiogram.types import ReplyKeyboardRemove
@@ -170,24 +171,36 @@ async def handle_main_menu(message: Message, bot: Bot,
 # =====================================================================================================================
 async def show_address(message: Message, bot: Bot,
                        state: FSMContext):
-
-    await bot.send_message(
+    await bot.send_venue(
         chat_id=message.chat.id,
-        text=generate_address_text(),
+        latitude=41.322709,
+        longitude=69.240669,
+        title="""Manzil: Toshkent, Alisher Navoiy ko'chasi 40 uy""",
+        address="""Orientir: Xadra sirkini oldida
+Ish grafigi: Har kuni 9:00 - 19:00
+Dam olish kunlarisiz !""",
+        reply_markup=generate_transport_keyboards()
+    )
+
+
+@user_router.callback_query(lambda call: call.data == "transport")
+async def show_transports(call: CallbackQuery, bot: Bot):
+    await bot.send_message(
+        chat_id=call.message.chat.id,
+        text=show_transports_text(),
         parse_mode=ParseMode.HTML
     )
-# =====================================================================================================================
 
+
+# =====================================================================================================================
 
 async def show_contacts(message: Message, bot: Bot,
                         state: FSMContext):
-    pass
-    # Контактная информация жонатиш кере
-    # await bot.send_message(
-    #     chat_id=message.chat.id,
-    #     text=generate_contacts_text(),
-    #     parse_mode=ParseMode.HTML
-    # )
+    await bot.send_message(
+        chat_id=message.chat.id,
+        text=generate_contacts_text(),
+        parse_mode=ParseMode.HTML
+    )
 
 # =====================================================================================================================
 

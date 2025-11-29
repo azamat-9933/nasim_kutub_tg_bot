@@ -37,3 +37,9 @@ def generate_back_button():
     builder.button(text="⬅ Ortga")
     builder.adjust(1)
     return builder.as_markup(resize_keyboard=True)
+
+def generate_transport_keyboards():
+    builder = InlineKeyboardBuilder()
+    builder.button(text="Jamoat transportlari", callback_data="transport")
+    builder.adjust(1)
+    return builder.as_markup(resize_keyboard=True)
