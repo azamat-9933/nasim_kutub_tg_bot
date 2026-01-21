@@ -24,7 +24,8 @@ async def start(message: Message, bot: Bot, state: FSMContext):
     chat_id = message.chat.id
     telegram_id = message.from_user.id
     user_exists = await check_user_registered(telegram_id)
-    if user_exists:
+
+    if user_exists['exists'] is True:
         await show_main_menu(message, bot, state)
     else:
         await bot.send_message(
@@ -126,7 +127,9 @@ async def show_main_menu(message: Message, bot: Bot, state: FSMContext):
     chat_id = message.chat.id
     telegram_id = message.from_user.id
     user_exists = await check_user_registered(telegram_id)
-    if user_exists:
+
+
+    if user_exists['exists'] is True:
         await bot.send_message(
             chat_id=chat_id,
             text=f"<b>{messages['message_7']}</b>",
